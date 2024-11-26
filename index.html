@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rerezz Official</title>
+  <!-- Link ke Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="https://pomf2.lain.la/f/ky5wal8o.jpg" alt="Foto Profil" class="header-img">
+    <h1>Rerezz Official</h1>
+    <i class="fas fa-bars sidebar-toggle" onclick="toggleSidebar()"></i>
+</header>
+    <div id="sidebar">
+        <div class="profile-container">
+            <img src="https://pomf2.lain.la/f/ky5wal8o.jpg" alt="Foto Profil" class="profile-img">
+            <p class="profile-name">Rerezz Official</p> 
+          </div>
+      <nav>
+        <a href="#beranda"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#tentang"><i class="fas fa-user"></i> Tentang</a>
+        <a href="#keahlian"><i class="fas fa-cogs"></i> Keahlian</a>
+        <a href="#proyek"><i class="fas fa-project-diagram"></i> Proyek</a>
+        <a href="#kontak"><i class="fas fa-envelope"></i> Kontak</a>
+        <a href="https://t.me/rerezz_official"><i class="fab fa-telegram"></i> Telegram</a>
+      </nav>
+    </div>
+
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <section id="beranda">
+    <h2><i class="fas fa-smile"></i> Selamat Datang Di Website Saya</h2>
+    <p>Solusi terbaik untuk pengembangan website modern dan pembuatan bot WhatsApp inovatif.</p>
+  </section>
+
+  <section id="tentang">
+    <h2><i class="fas fa-info-circle"></i> Tentang Saya</h2>
+    <p>Halo! Saya <strong>Rerezz</strong>, seorang pengembang yang berdedikasi untuk menciptakan website responsif dan alat otomatisasi seperti bot WhatsApp untuk meningkatkan pengalaman pengguna dan efisiensi bisnis juga pembelajaran.</p>
+  </section>
+
+  <section id="keahlian">
+    <h2><i class="fas fa-lightbulb"></i> Keahlian Saya</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <i class="fab fa-html5"></i>
+        <div class="skill-name">HTML</div>
+        <div class="progress-percentage">90%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <i class="fab fa-css3-alt"></i>
+        <div class="skill-name">CSS</div>
+        <div class="progress-percentage">85%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <i class="fab fa-js-square"></i>
+        <div class="skill-name">JavaScript</div>
+        <div class="progress-percentage">80%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <i class="fab fa-node"></i>
+        <div class="skill-name">Node.js</div>
+        <div class="progress-percentage">75%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 75%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <i class="fab fa-php"></i>
+        <div class="skill-name">PHP</div>
+        <div class="progress-percentage">40%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 40%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <i class="fab fa-python"></i>
+        <div class="skill-name">Python</div>
+        <div class="progress-percentage">35%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 35%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <h2><i class="fas fa-code"></i> Proyek</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3><i class="fas fa-laptop-code"></i> Proyek Website</h3>
+        <p>Saya Sedang Membuat Sebuah Toko Online Public Yang Berbasis Node.js.</p>
+      </div>
+      <div class="project">
+        <h3><i class="fas fa-robot"></i> Bot WhatsApp</h3>
+        <p>Saya Membuat Beberapa Source Code Bot WhatsApp Multi Fungsi</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2><i class="fas fa-phone-alt"></i> Kontak Saya</h2>
+    <form id="contactForm">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email Anda" required>
+        
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda" required></textarea>
+        
+        <button type="button" id="sendEmailButton"><i class="fas fa-paper-plane"></i> Kirim Pesan Email</button>
+    </form>
+</section>
+
+  <footer>
+    <p>&copy; 2024 Rerezz Official. Hak Cipta Dilindungi.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
