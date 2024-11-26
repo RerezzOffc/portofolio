@@ -1,0 +1,440 @@
+/* Gaya Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f3f4f6;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top: 20px; /* Jarak dari atas */
+  left: -270px; /* Tersembunyi secara default */
+  width: 240px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.8); /* Transparansi warna putih */
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  border-radius: 10px;
+  padding: 15px; /* Padding internal */
+  box-shadow: 0px 0 15px rgba(37, 99, 235, 0.8);
+}
+
+/* Sidebar saat terbuka */
+#sidebar.open {
+  left: 30px; /* Memberi jarak 30px dari sisi kiri */
+}
+
+.sidebar-toggle {
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Menambahkan Foto Profil */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Mengatur gambar dan teks ke tengah */
+  margin-bottom: 20px; /* Memberikan jarak antara foto dan menu */
+}
+
+.profile-img {
+  width: 80px; /* Ukuran foto profil */
+  height: 80px; /* Ukuran foto profil */
+  border-radius: 50%; /* Membuat gambar bulat */
+  object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+  border: 2px solid rgb(75, 35, 252); /* Menambahkan border putih di sekitar gambar */
+  box-shadow: 0px 0 15px rgba(37, 99, 235, 0.8), 0px 0 15px rgba(37, 99, 235, 0.8);
+}
+
+/* Teks di bawah Foto Profil */
+.profile-name {
+  font-size: 1.2rem; /* Ukuran font untuk nama */
+  color: rgb(0, 0, 0); /* Warna teks */
+  margin-top: 10px; /* Jarak antara foto dan teks */
+  text-align: center; /* Menyelaraskan teks ke tengah */
+}
+#sidebar nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#sidebar nav a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #6940ff;
+  background-color: #7d4dff79;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 0 15px rgba(37, 99, 235, 0.8);
+}
+
+#sidebar nav a:hover {
+  background-color: rgba(41, 3, 255, 0.452); /* Warna latar belakang biru transparan */
+  color: #fff; /* Pastikan warna teks tetap putih saat hover */
+  transform: scale(1.1); /* Membesarkan elemen saat hover */
+  box-shadow: 0px 4px 20px rgba(37, 99, 235, 0.7); /* Efek bayangan biru yang lebih terang */
+  padding-left: 15px; /* Memberikan efek pergeseran ke kiri saat hover */
+  border-left: 4px solid rgba(37, 99, 235, 0.8); /* Garis biru di kiri saat hover */
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
+/* Overlay untuk menutup Sidebar */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 900;
+}
+
+/* Konten Utama */
+main {
+  margin-left: 50px;
+  padding: 20px;
+  transition: margin-left 0.5s ease;
+}
+
+/* Konten saat Sidebar terbuka */
+#sidebar:not(.collapsed) ~ main {
+  margin-left: 250px;
+}
+
+/* Header */
+/* Style untuk Header */
+header {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem; /* Jarak atas dan bawah, serta kanan kiri */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-top-left-radius: 0; /* Menghilangkan kelengkungan bagian atas kiri */
+  border-top-right-radius: 0; /* Menghilangkan kelengkungan bagian atas kanan */
+  border-bottom-left-radius: 30px; /* Memberikan kelengkungan pada bagian bawah kiri */
+  border-bottom-right-radius: 30px; /* Memberikan kelengkungan pada bagian bawah kanan */
+  margin: 0 5%; /* Jarak dari kiri dan kanan */
+}
+
+/* Gaya gambar di dalam header */
+.header-img {
+  width: 120px; /* Ukuran lebar gambar */
+  height: 120px; /* Ukuran tinggi gambar */
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  margin-bottom: 1rem; /* Jarak antara gambar dan teks */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border: 3px solid white; /* Memberikan border putih di sekitar gambar */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none; /* Hide default nav on mobile */
+  }
+}
+
+section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
+}
+
+section p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 700px;
+  color: #555;
+}
+
+ /* Keahlian */
+ .skills-container {
+  margin-top: 2rem;
+}
+.skill {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.skill i {
+    font-size: 3rem;
+    color: #2563eb;
+    margin-left: 0.5%;
+  }
+.skill-name {
+  font-size: 1rem;
+  font-weight: bold;
+  
+  color: #2563eb;
+}
+.progress-bar {
+  height: 10px;
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.progress {
+  height: 100%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transition: width 0.5s ease;
+}
+.progress-percentage {
+    font-size: 1rem;
+    font-weight: bold;
+    
+    color: #2563eb;
+  text-align: right;
+}
+/* Section Proyek */
+#proyek {
+  background-color: #f4f7fb; /* Latar belakang terang dengan warna biru muda */
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#proyek h2 {
+  font-size: 2.5rem;
+  color: #2563eb;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#proyek h2 i {
+  margin-right: 10px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Menyesuaikan layout saat layar kecil */
+}
+
+.project {
+  background-color: #ffffff; /* Latar belakang putih untuk setiap proyek */
+  border-radius: 10px;
+  width: 280px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-10px); /* Efek angkat saat hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Efek bayangan lebih terang */
+}
+
+.project h3 {
+  font-size: 1.6rem;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.project i {
+  margin-right: 10px;
+  color: #2563eb;
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+  #proyek {
+    padding: 40px 10px;
+  }
+  
+  #proyek h2 {
+    font-size: 2rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    width: 90%; /* Menggunakan 90% dari lebar layar untuk proyek pada perangkat kecil */
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Section Kontak */
+#kontak {
+  background-color: #f7fafc; /* Warna latar belakang terang */
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+#kontak h2 {
+  font-size: 2.5rem;
+  color: #2563eb;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#kontak h2 i {
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #2563eb; /* Mengubah border saat fokus */
+  outline: none;
+}
+
+form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1e4e92; /* Warna saat hover */
+  transform: translateY(-3px); /* Efek angkat pada tombol */
+}
+
+form button:active {
+  transform: translateY(1px); /* Efek klik pada tombol */
+}
+
+form textarea {
+  resize: vertical; /* Agar teks area bisa diubah ukurannya secara vertikal */
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+  #kontak h2 {
+    font-size: 2rem;
+  }
+
+  form {
+    width: 90%; /* Menyesuaikan form agar lebih lebar pada layar kecil */
+  }
+
+  form input, form textarea, form button {
+    font-size: 1rem;
+  }
+}
+
+
+/* Style untuk Footer */
+footer {
+  background-color: #2563eb; /* Warna biru sesuai tema */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1); /* Memberikan bayangan lembut pada bagian atas footer */
+  border-top: 4px solid #1e4e92; /* Garis atas untuk mempertegas footer */
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Efek hover untuk footer */
+footer p:hover {
+  text-decoration: underline; /* Efek garis bawah saat hover */
+  cursor: pointer;
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+  footer {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
